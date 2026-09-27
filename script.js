@@ -1,0 +1,39 @@
+let nums = [2, 3, 7];
+
+function total(arr) {
+  let s = 0;
+  for (let i = 0; i < arr.length; i = i + 1) {
+    s = s + arr[i];
+  }
+  return s;
+}
+
+function biggest(arr) {
+  let b = arr[0];
+  for (let i = 1; i < arr.length; i = i + 1) {
+    if (arr[i] > b) {
+      b = arr[i];
+    }
+  }
+  return b;
+}
+
+function above(arr) {
+  let n = 0;
+  for (let i = 1; i < arr.length; i = i + 1) {
+    if (arr[i] > arr[0]) {
+      n = n + 1;
+    }
+  }
+  return n;
+}
+
+console.log(total(nums));
+console.log(biggest(nums));
+console.log(above(nums));
+
+document.querySelector("#show").addEventListener("click", function () {
+  document.querySelector("#total").textContent = total(nums);
+  document.querySelector("#big").textContent = biggest(nums);
+  document.querySelector("#above").textContent = above(nums);
+});
